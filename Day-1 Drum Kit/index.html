@@ -78,12 +78,6 @@
     playSoundFromKeyCode(e.keyCode);
   }
 
-  function handleTouch(e) {
-    const keyElement = e.currentTarget;
-    const keyCode = keyElement.getAttribute('data-key');
-    playSoundFromKeyCode(keyCode);
-  }
-
   function handleClick(e) {
     const keyElement = e.currentTarget;
     const keyCode = keyElement.getAttribute('data-key');
@@ -93,7 +87,6 @@
   const keys = Array.from(document.querySelectorAll('.key'));
   keys.forEach(key => {
     key.addEventListener('transitionend', removeTransition);
-    key.addEventListener('touchstart', handleTouch);
     key.addEventListener('click', handleClick); // Add click support
   });
 
